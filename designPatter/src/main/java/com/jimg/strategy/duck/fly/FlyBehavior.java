@@ -1,4 +1,4 @@
-package com.jimg.duck.fly;
+package com.jimg.strategy.duck.fly;
 
 public interface FlyBehavior {
 

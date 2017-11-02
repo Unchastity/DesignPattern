@@ -1,4 +1,4 @@
-package com.jimg.duck.quack;
+package com.jimg.strategy.duck.quack;
 
 public interface QuackBehavior {
 

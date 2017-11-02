@@ -1,7 +1,7 @@
-package com.jimg.duck.simulator;
+package com.jimg.strategy.duck.simulator;
 
-import com.jimg.duck.Duck;
-import com.jimg.duck.MallardDuck;
+import com.jimg.strategy.duck.Duck;
+import com.jimg.strategy.duck.MallardDuck;
 
 public class DuckSimulator {
 

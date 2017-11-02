@@ -1,7 +1,7 @@
-package com.jimg.duck;
+package com.jimg.strategy.duck;
 
-import com.jimg.duck.fly.flyImpl.FlyWithWings;
-import com.jimg.duck.quack.quackImpl.Quack;
+import com.jimg.strategy.duck.fly.flyImpl.FlyWithWings;
+import com.jimg.strategy.duck.quack.quackImpl.Quack;
 
 public class DecoyDuck extends Duck {
 

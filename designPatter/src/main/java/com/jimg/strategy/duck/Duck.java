@@ -1,7 +1,7 @@
-package com.jimg.duck;
+package com.jimg.strategy.duck;
 
-import com.jimg.duck.fly.FlyBehavior;
-import com.jimg.duck.quack.QuackBehavior;
+import com.jimg.strategy.duck.fly.FlyBehavior;
+import com.jimg.strategy.duck.quack.QuackBehavior;
 
 public abstract class Duck {
 

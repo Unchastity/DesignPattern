@@ -1,6 +1,6 @@
-package com.jimg.duck.quack.quackImpl;
+package com.jimg.strategy.duck.quack.quackImpl;
 
-import com.jimg.duck.quack.QuackBehavior;
+import com.jimg.strategy.duck.quack.QuackBehavior;
 
 public class Squeak implements QuackBehavior {
     @Override

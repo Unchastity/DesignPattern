@@ -1,6 +1,6 @@
-package com.jimg.duck.fly.flyImpl;
+package com.jimg.strategy.duck.fly.flyImpl;
 
-import com.jimg.duck.fly.FlyBehavior;
+import com.jimg.strategy.duck.fly.FlyBehavior;
 
 public class FlyWithWings implements FlyBehavior {
     @Override
