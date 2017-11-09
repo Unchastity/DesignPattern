@@ -86,3 +86,72 @@
     7）抽象工厂创建相关的对象家族，而不需要依赖他们的具体类。
     8）依赖倒置原则，知道我们避免依赖具体类型，而要尽量依赖抽象。
     9）工厂帮助我们针对抽象编程，而不是针对具体编程。
+    
+********************************
+
+##单件模式
+    确保一个类只有一个实例，并提供一个全局访问点。
+    public class Singleton{
+        private static Singleton singleton;
+        private Singleton() {}
+        public static Singleton getInstance() {
+            if (singleton == null) {
+                singleton = new Singleton();
+            }
+            return singleton;
+        }
+    }
+    此种方式为延迟实例化，在多线程中，可能会导致实例化多个对象，需进行同步。
+###延迟实例化
+    在使用该对象时才创建。
+####同步getInstance方法
+    在getInstance()使用频繁的地方，性能较低。
+    public class Singleton{
+            private static Singleton singleton;
+            private Singleton() {}
+            public static synchronized Singleton getInstance() {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                }
+                return singleton;
+            }
+        }
+####双重检查加锁
+    在对象尚未创建时才进行同步。
+    public class Singleton{
+            private static volitile Singleton singleton;
+            private Singleton() {}
+            public static Singleton getInstance() {
+                if (singleton == null) {
+                    synchronized(Singleton.class) {
+                        if (singleton == null) {
+                           singleton = new Singleton();
+                        } 
+                    }
+                }
+                return singleton;
+            }
+        }
+        
+###“急切”实例化
+    在JVM加载这个类时，马上创建此唯一的单件实例，保证在任何线程访问uniqueInstance静态变量之前，先创建此实例。
+    在创建或运行时方面负担不繁重是可以采用该方法。
+    public class Singleton{
+        provate static Singleton singleton = new Singleton();
+        
+        private Singleton(){
+        }
+        
+        public static Singleton getInstance() {
+            return singleton;
+        }
+    
+    }
+    
+###要点
+    1）单件模式确保程序中一个类最多只有一个实例；
+    2）单件模式也提供访问这个实例的全局点；
+    3）在Java中实现单件模式需要私有的构造器，一个静态方法和静态变量；
+    4）确定在性能和资源上的限制，然后小心地选择适当的方案来实现单件，已解决多线程的问题；
+    5）小心，如果使用多个类加载器，可能导致单件失效而产生多个实例。
+    
