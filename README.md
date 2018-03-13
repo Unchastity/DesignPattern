@@ -12,13 +12,13 @@
 2. 不要让类派生自具体类。若派生自具体类，就会依赖具体类，派生一个抽象（接口或抽象类）。
 3. 不要覆盖基类中已实现的方法。若覆盖了基类，那么该基类就不是一个真正适合该继承的抽象，
 基类中已实现的部分应该由所有的子类共享。
-
-##指导方针
+####指导方针
 1. 变量不可以持有具体类的引用
 2. 不要让类派生自具体类
 3. 不要覆盖基类中已实现的方法
 注意：若具体类是一个不会改变的类，直接实例化没什么影响；
 
+***************************
 ##策略模式
     定义了算法族，分别封装起来，让他们之间可以互相替换，让算法的变化独立于使用算法的客户，类的方法可以看做是
     对象拥有的技能，算法，而不是单纯的行为。
@@ -124,6 +124,7 @@
             public static Singleton getInstance() {
                 if (singleton == null) {
                     synchronized(Singleton.class) {
+                        //获得锁后再次判断对象是否被创建
                         if (singleton == null) {
                            singleton = new Singleton();
                         } 
@@ -140,12 +141,12 @@
         provate static Singleton singleton = new Singleton();
         
         private Singleton(){
+        
         }
         
         public static Singleton getInstance() {
             return singleton;
         }
-    
     }
     
 ###要点
